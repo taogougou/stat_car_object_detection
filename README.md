@@ -1,5 +1,5 @@
 # stat_car_object_detection
-基于深度学习框架的高速路上车流量的实时统计,这里只是用视频做了一个demo，实际应用需要调取摄像头，结合实际开发相关功能模块。vodeos/test.mp4为源视频，videos/test_out.avi 为处理后的效果图，可以直接下载查看
+基于深度学习框架的高速路上车流量的实时统计,这里只是用视频做了一个demo，实际应用需要调取摄像头，结合实际开发相关功能模块。vodeos/test.mp4为源视频，videos/test_out.avi 为处理后的效果图，可以直接下载查看，faster-rcnn源码地址：https://github.com/endernewton/tf-faster-rcnn.git
 # windows平台代码运行
   
 1、进入lib文件夹下，修改setup.py文件，因为setup.py文件同时编译了又cpu和GPU的情况。本台电脑没有GPU，所以不需要编译GPU，
