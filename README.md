@@ -5,8 +5,8 @@
 1、进入lib文件夹下，修改setup.py文件，因为setup.py文件同时编译了又cpu和GPU的情况。本台电脑没有GPU，所以不需要编译GPU，
    如果直接编译，会报错：OSError: The nvcc binary could not be located in your $PATH. Either add it to your path, or set $CUDA_PATH
   修改：要注释的代码  
-  1：#CUDA = locate_cuda()  57行  
-  2：#customize_compiler_for_nvcc(self.compiler) 110行
+    1：#CUDA = locate_cuda()  57行  
+    2：#customize_compiler_for_nvcc(self.compiler) 110行
     
 2、执行Makefile文件中的 python setup.py ,build_ext --inplace
   
@@ -53,10 +53,10 @@
       cd output/${NET}/${TRAIN_IMDB}  
       ln -s ../../../data/voc_2007_trainval+voc_2012_trainval ./default  
 	
-9、回到根目录：执行命令：python3 tools/demo.py ，这里会报错RuntimeError: Invalid DISPLAY variable，这是因为matplotlib 输出的图像没有输出来，解决办法是修改demo.py中的代码，使得不输出图像：
-![Image text](https://github.com/taogougou/img_folder/blob/master/img1.png?raw=true)    
-![Image text](https://github.com/taogougou/img_folder/blob/master/img2.png?raw=true)    
-10、执行命令：python3 tools/demo.py,
+9、回到根目录：执行命令：python3 tools/demo.py ，这里会报错RuntimeError: Invalid DISPLAY variable，这是因为matplotlib 输出的图像没有输出来，解决办法是修改demo.py中的代码，使得不输出图像：  
+![Image text](https://github.com/taogougou/img_folder/blob/master/img1.png?raw=true)      
+![Image text](https://github.com/taogougou/img_folder/blob/master/img2.png?raw=true)      
+10、执行命令：python3 tools/demo.py  
 11、运行python3 test/video_object_detection.py 即可运行高速路口车辆的实时统计（这里事例选的是视频，实时统计需要添加调取摄像头等功能）  
 12、Ubuntu中opencv读取视频出错：需要安装ffmpeg 执行命令：pip3 install ffmpeg和pip3 install opencv-contrib-python，
 
