@@ -42,7 +42,7 @@
   
 5、cd stat_car_object_detection/lib 进入lib包执行make操作，这里注意因为是用python3，所以需要修改Makefile文件内容，将文件中的python都修改问python3，分别执行命令：make clean   make
   
-6、安装 Python COCO API，这是为了使用COCO数据库，分别执行命令：cd data ->git clone https://github.com/pdollar/coco.git ->cd coco/PythonAPI 下面执行make操作前，注意和4步一样修改Makefile文件，将python全部修改为python3，然后执行 make命令
+6、安装 Python COCO API，这是为了使用COCO数据库，分别执行命令：cd data ->git clone https://github.com/pdollar/coco.git ->cd coco/PythonAPI 下面执行make操作前，注意和5步一样修改Makefile文件，将python全部修改为python3，然后执行 make命令
   
 7、下载预训练模型Resnet101 for voc pre-trained on 07+12 set，执行命令：./data/scripts/fetch_faster_rcnn_models.sh，或自己下载voc_0712_80k-110k.tgz包放到data目录下，解压：tar xvf voc_0712_80k-110k.tgz
   
