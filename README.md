@@ -1,19 +1,23 @@
 # stat_car_object_detection
 基于深度学习框架的高速路上车流量的实时统计
 # windows平台代码运行
+  
 1、进入lib文件夹下，修改setup.py文件，因为setup.py文件同时编译了又cpu和GPU的情况。本台电脑没有GPU，所以不需要编译GPU，
    如果直接编译，会报错：OSError: The nvcc binary could not be located in your $PATH. Either add it to your path, or set $CUDA_PATH
   修改：要注释的代码
   1：#CUDA = locate_cuda()  57行
   2：#customize_compiler_for_nvcc(self.compiler) 110行
+    
 2、执行Makefile文件中的 python setup.py build_ext --inplace
+  
 3、注释掉nms_wrapper.py中的  17行 # from nms.gpu_nms import gpu_nms
-   #if cfg.USE_GPU_NMS and not force_cpu:   25
+     #if cfg.USE_GPU_NMS and not force_cpu:   25
      #return gpu_nms(dets, thresh, device_id=0)  26
+  
 4、执行官网的demo  直接运行tools/demo.py文件
-报错处理：
-1、报错：ValueError: Buffer dtype mismatch, expected 'int_t' but got 'long long'
-解决办法：打开lib/nns/nms.pyx，将第25行的np.int_t修改为np.intp_t。然后重新执行setup.py
+  报错处理：
+  报错：ValueError: Buffer dtype mismatch, expected 'int_t' but got 'long long'
+  解决办法：打开lib/nns/nms.pyx，将第25行的np.int_t修改为np.intp_t。然后重新执行setup.py
 
 # ubuntu平台代码运行
   
