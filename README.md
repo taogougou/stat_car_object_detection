@@ -52,6 +52,9 @@
       ln -s ../../../data/voc_2007_trainval+voc_2012_trainval ./default  
 	
 9、回到根目录：执行命令：python3 tools/demo.py ，这里会报错RuntimeError: Invalid DISPLAY variable，这是因为matplotlib 输出的图像没有输出来，解决办法是修改demo.py中的代码，使得不输出图像：
+![Image text](img_folder/img1.png)  
+![Image text](img_folder/img2.png)  
+
 
 
 
