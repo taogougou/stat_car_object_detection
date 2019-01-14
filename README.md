@@ -18,14 +18,16 @@
 5、 报错处理：  
   报错：ValueError: Buffer dtype mismatch, expected 'int_t' but got 'long long'  
   解决办法：打开lib/nns/nms.pyx，将第25行的np.int_t修改为np.intp_t。然后重新执行setup.py  
-
+6、直接运行test/video_object_detection.py 脚本即可运行告诉路上车辆的统计
+7、
 # ubuntu平台代码运行
   
 1、先检查pip3是否安装,命令：pip3 –version, 如果不存在就要安装pip3，执行apt-get update，然后执行：sudo apt-get install python3-dev（为后面make操作，注意必须是pyhton3-dev，不能是python-dev），Python2 和 pip2 存在， Python3 也存在，但是 pip3 不存在的解决办法：  
     sudo curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py  
     sudo python3  get-pip.py
       
-2、先安装环境，执行以上pip3命令：  pip3 install cython  
+2、先安装环境，执行以上pip3命令:   
+                                  pip3 install cython  
                                   pip3 install opencv-python  
                                   pip3 install matplotlib  
                                   pip3 install easydict  
@@ -52,9 +54,11 @@
       ln -s ../../../data/voc_2007_trainval+voc_2012_trainval ./default  
 	
 9、回到根目录：执行命令：python3 tools/demo.py ，这里会报错RuntimeError: Invalid DISPLAY variable，这是因为matplotlib 输出的图像没有输出来，解决办法是修改demo.py中的代码，使得不输出图像：
-![Image text](https://github.com/taogougou/img_folder/blob/master/img1.png?raw=true)  
-![Image text](https://github.com/taogougou/img_folder/blob/master/img2.png?raw=true)  
-
+![Image text](https://github.com/taogougou/img_folder/blob/master/img1.png?raw=true)    
+![Image text](https://github.com/taogougou/img_folder/blob/master/img2.png?raw=true)    
+10、执行命令：python3 tools/demo.py,
+11、运行python3 test/video_object_detection.py 即可运行高速路口车辆的实时统计（这里事例选的是视频，实时统计需要添加调取摄像头等功能）  
+12、Ubuntu中opencv读取视频出错：需要安装ffmpeg 执行命令：pip3 install ffmpeg和pip3 install opencv-contrib-python，
 
 
 
